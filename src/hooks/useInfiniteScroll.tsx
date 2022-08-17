@@ -1,11 +1,6 @@
 import { MutableRefObject, useState, useEffect, useRef, useMemo } from 'react'
 import { PostListItemType } from 'types/PostItem.types'
 
-export type useInfiniteScrollType = {
-  containerRef: MutableRefObject<HTMLDivElement | null>
-  postList: PostListItemType[]
-}
-
 const NUMBER_OF_ITEMS_PER_PAGE = 10
 
 const useInfiniteScroll = function (
@@ -55,6 +50,10 @@ const useInfiniteScroll = function (
     containerRef,
     postList: postListByCategory.slice(0, count * NUMBER_OF_ITEMS_PER_PAGE),
   }
+}
+export type useInfiniteScrollType = {
+  containerRef: MutableRefObject<HTMLDivElement | null>
+  postList: PostListItemType[]
 }
 
 export default useInfiniteScroll
